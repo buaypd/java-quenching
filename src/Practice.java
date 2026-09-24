@@ -34,7 +34,18 @@ public class Practice {
      * @throws NullPointerException if words is null
      */
     public static String shortestWord(Set<String> words) {
-        return null;
+        String shortestWord = null;
+        if (words == null) throw new NullPointerException("Set is null");
+        if (words.isEmpty()) throw new IllegalArgumentException("Empty Set");
+
+
+        for (String word : words) {
+        if (shortestWord == null || 
+            word.length() < shortestWord.length() || 
+            word.length() == shortestWord.length() && word.compareTo(shortestWord) < 0 )
+            shortestWord = word;
+        }
+        return shortestWord;
     }
 
     /**
@@ -48,6 +59,7 @@ public class Practice {
      */
     public static Set<String> adults(Map<String, Integer> ages) {
         return null;
+        
     }
 
     /**
