@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -79,7 +80,16 @@ public class Practice {
      * @throws IllegalArgumentException if head is null
      */
     public static int biggestNumber(ListNode<Integer> head) {
-        return 0;
+        if (head == null) { throw new IllegalArgumentException("head is null");}
+
+        ListNode<Integer> current = head;
+        int biggestNumber = Integer.MIN_VALUE;
+
+        while (current != null) {
+            if (current.data > biggestNumber) { biggestNumber = current.data; }
+            current = current.next;
+        }
+        return biggestNumber;
     }
 
     /**
